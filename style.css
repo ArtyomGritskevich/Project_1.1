@@ -1,0 +1,379 @@
+@charset "UTF-8";
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 998;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  height: 65px;
+  background-color: white;
+}
+.header-top img {
+  display: block;
+  height: 60px;
+}
+
+.header-phones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: right;
+  min-width: 600px;
+}
+
+.header-phone {
+  color: #355cb7;
+  font-weight: bold;
+}
+
+.header-phone-calls {
+  display: none;
+  background-color: #06266f;
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 100px;
+}
+.header-phone-calls:hover {
+  background-color: #1240ab;
+}
+
+.header-programm {
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px #06266f solid;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+  border-radius: 30px;
+  color: white;
+  background-color: #06266f;
+  min-width: 200px;
+  margin-right: 10px;
+}
+.header-programm:hover {
+  background-color: #1240ab;
+}
+
+.header-nav {
+  height: 50px;
+  background-color: #06266f;
+}
+
+.nav-container a {
+  text-decoration: none;
+  line-height: 50px;
+  color: white;
+}
+.nav-container .item-1 {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  text-align: center;
+}
+.nav-container .item-1 li {
+  display: block;
+  flex-grow: 1;
+  height: 50px;
+}
+.nav-container .item-1 .item-2 {
+  background-color: #1240ab;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 0px;
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.2s linear;
+}
+.nav-container .item-1 .item-2 li {
+  min-width: 300px;
+  padding-left: 20px;
+}
+.nav-container .item-1 .item-2 a {
+  display: block;
+}
+.nav-container .item-1 li:hover {
+  background-color: #1240ab;
+}
+.nav-container .item-1 li:hover .item-2 {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+.nav-container .item-1 li:hover .item-2 li:hover {
+  background-color: #06266f;
+}
+
+.carousel-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.carousel-height {
+  height: 700px;
+}
+
+.carousel-text {
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: 100;
+}
+.carousel-text p {
+  margin: 0;
+}
+
+.carousel-button {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 50px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.carousel-button:hover {
+  background-color: #06266f;
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.new-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin: 0 10%;
+  padding-bottom: 40px;
+}
+.new-main img {
+  display: block;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.new-main-title {
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.new-item {
+  position: relative;
+  padding: 10px;
+}
+
+.new-item-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.new-item-background:hover {
+  background-color: blue;
+  opacity: 0.2;
+}
+
+.feedback {
+  height: 200px;
+  background-color: #5875b7;
+  padding-left: 7%;
+  padding-top: 20px;
+}
+
+.feedback-title {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+.feedback-form {
+  display: flex;
+}
+
+.feedback-phone {
+  display: block;
+  width: 400px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.feedback-button {
+  display: block;
+  width: 250px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #363636;
+}
+.feedback-button:hover {
+  background-color: #021748;
+  color: white;
+}
+
+.footer {
+  background-color: #182a53;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+}
+
+@media screen and (max-width: 1980px) and (min-width: 1150px) {
+  .header-programm::after {
+    content: " оборудования";
+  }
+}
+@media screen and (max-width: 1150px) {
+  .carousel-text {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header-phones-item {
+    visibility: hidden;
+  }
+
+  .header-phone-calls {
+    display: block;
+  }
+
+  .header-phones {
+    justify-content: center;
+    min-width: 100px;
+  }
+
+  .nav-container .item-1 .item-2 li {
+    min-width: 230px;
+  }
+
+  .carousel-height {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .new-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carousel-text {
+    width: 600px;
+    font-size: 13px;
+  }
+
+  .feedback-button {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .feedback-phone {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .feedback-title {
+    font-size: 20px;
+  }
+
+  .feedback {
+    height: 160px;
+  }
+
+  .footer {
+    font-size: 11px;
+  }
+
+  .header-nav {
+    font-size: 14px;
+  }
+
+  .header-programm {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .header-top {
+    height: 50px;
+  }
+  .header-top img {
+    height: 40px;
+  }
+
+  .header-phone-calls {
+    margin-right: 250px;
+    width: 50px;
+  }
+
+  .header-nav {
+    font-size: 11px;
+    height: 30px;
+  }
+
+  .nav-container a {
+    line-height: 30px;
+  }
+  .nav-container .item-1 li {
+    height: 30px;
+  }
+  .nav-container .item-1 .item-2 li {
+    min-width: 170px;
+    padding: 0 10px;
+  }
+
+  .carousel-text {
+    width: 450px;
+    font-size: 13px;
+  }
+
+  .new-main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .feedback-button {
+    width: 180px;
+    height: 35px;
+    font-size: 13px;
+  }
+
+  .feedback-phone {
+    width: 200px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+.header-phone-calls:hover .header-phones-item {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */

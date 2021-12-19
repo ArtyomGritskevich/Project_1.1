@@ -1,0 +1,341 @@
+@mixin font-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+@mixin feedback-form($width, $height, $font_size) {
+    width: $width;
+    height: $height;
+    font-size: $font-size;
+}
+body {
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    height: 65px;
+    background-color: white;
+    img {
+        display: block;
+        height: 60px;
+    }
+}
+.header-phones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+    min-width: 600px;
+}
+.header-phone {
+    color: #355cb7;
+    font-weight: bold;
+}
+.header-phone-calls {
+    display: none;
+    background-color: #06266f;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 100px;
+    &:hover {
+        background-color: #1240ab;
+    }
+}
+.header-programm {
+    @include font-title;
+    border: 1px #06266f solid;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    border-radius: 30px;
+    color: white;
+    background-color: #06266f;
+    min-width: 200px;
+    margin-right: 10px;
+    &:hover {
+        background-color: #1240ab;
+    }
+}
+.header-nav {
+    height: 50px;
+    background-color: #06266f;
+}
+.nav-container {
+    a {
+        text-decoration: none;
+        line-height: 50px;
+        color: white;
+    }
+    .item-1 {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        text-align: center;
+        li {
+            display: block;
+            flex-grow: 1;
+            height: 50px;
+        }
+        .item-2 {
+            background-color: #1240ab;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            padding: 0px;
+            text-align: left;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.2s linear;
+            li {
+                min-width: 300px;
+                padding-left: 20px;
+            }
+            a {
+                display: block;
+            }
+        }
+        li:hover {
+            background-color: #1240ab;
+            .item-2 {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .item-2 li:hover {
+                background-color: #06266f;
+            }
+        }
+    }
+}
+.carousel-title {
+    @include font-title;
+    color: white;
+}
+.carousel-height {
+    height: 700px;
+}
+.carousel-text {
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 100;
+    p {
+        margin: 0;
+    }
+}
+.carousel-button {
+    @include font-title;
+    color: white;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    &:hover {
+        background-color: #06266f;
+    }
+}
+.carousel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+.new-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin: 0 10%;
+    padding-bottom: 40px;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        z-index: 3;
+    }
+}
+.new-main-title {
+    @include font-title;
+    display: block;
+    text-align: center;
+    margin: 40px 0;
+}
+.new-item {
+    position: relative;
+    padding: 10px;
+}
+.new-item-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.new-item-background:hover {
+    background-color: blue;
+    opacity: 0.2;
+}
+.feedback {
+    height: 200px;
+    background-color: #5875b7;
+    padding-left: 7%;
+    padding-top: 20px;
+}
+.feedback-title {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+.feedback-form {
+    display: flex;
+}
+.feedback-phone {
+    display: block;
+    @include feedback-form(400px, 40px, 30px);
+}
+.feedback-button {
+    display: block;
+    @include feedback-form(250px, 40px, 20px);
+    background-color: rgb(54, 54, 54);
+    &:hover {
+        background-color: #021748;
+        color: white;
+    }
+}
+.footer {
+    background-color: #182a53;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+}
+@media screen and (max-width: 1980px) and (min-width: 1150px) {
+    .header-programm::after {
+        content: " оборудования";
+    }
+}
+@media screen and (max-width: 1150px) {
+    .carousel-text {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .header-phones-item {
+        visibility: hidden;
+    }
+    .header-phone-calls {
+        display: block;
+    }
+    .header-phones {
+        justify-content: center;
+        min-width: 100px;
+    }
+    .nav-container {
+        .item-1 {
+            .item-2 {
+                li {
+                    min-width: 230px;
+                }
+            }
+        }
+    }
+    .carousel-height {
+        height: 600px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .new-main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .carousel-text {
+        width: 600px;
+        font-size: 13px;
+    }
+    .feedback-button {
+        @include feedback-form(200px, 40px, 14px);
+    }
+    .feedback-phone {
+        @include feedback-form(250px, 40px, 20px);
+    }
+    .feedback-title {
+        font-size: 20px;
+    }
+    .feedback {
+        height: 160px;
+    }
+    .footer {
+        font-size: 11px;
+    }
+    .header-nav {
+        font-size: 14px;
+    }
+    .header-programm {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .header-top {
+        height: 50px;
+        img {
+            height: 40px;
+        }
+    }
+    .header-phone-calls {
+        margin-right: 250px;
+        width: 50px;
+    }
+    .header-nav {
+        font-size: 11px;
+        height: 30px;
+    }
+    .nav-container {
+        a {
+            line-height: 30px;
+        }
+        .item-1 {
+            li {
+                height: 30px;
+            }
+            .item-2 {
+                li {
+                    min-width: 170px;
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    .carousel-text {
+        width: 450px;
+        font-size: 13px;
+    }
+    .new-main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .feedback-button {
+        @include feedback-form(180px, 35px, 13px);
+    }
+    .feedback-phone {
+        @include feedback-form(200px, 35px, 18px);
+    }
+}
+.header-phone-calls:hover {
+    .header-phones-item {
+        visibility: visible;
+    }
+}
