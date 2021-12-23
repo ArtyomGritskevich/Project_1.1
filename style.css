@@ -1,10 +1,20 @@
 @charset "UTF-8";
+.font-title, .new-main-title, .carousel-button, .carousel-title, .header-programm {
+  text-align: center;
+  text-transform: uppercase;
+}
+
 body {
   margin: 0px;
 }
 
 a {
   text-decoration: none;
+}
+
+.font-title, .new-main-title, .carousel-button, .carousel-title, .header-programm {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .header {
@@ -51,8 +61,6 @@ a {
 }
 
 .header-programm {
-  text-align: center;
-  text-transform: uppercase;
   border: 1px #06266f solid;
   height: 40px;
   padding: 0 10px;
@@ -120,8 +128,6 @@ a {
 }
 
 .carousel-title {
-  text-align: center;
-  text-transform: uppercase;
   color: white;
 }
 
@@ -141,8 +147,6 @@ a {
 }
 
 .carousel-button {
-  text-align: center;
-  text-transform: uppercase;
   color: white;
   width: 300px;
   height: 50px;
@@ -177,8 +181,6 @@ a {
 }
 
 .new-main-title {
-  text-align: center;
-  text-transform: uppercase;
   display: block;
   text-align: center;
   margin: 40px 0;
@@ -246,9 +248,13 @@ a {
   color: white;
 }
 
-@media screen and (max-width: 1980px) and (min-width: 1150px) {
+@media screen and (max-width: 2000px) and (min-width: 1150px) {
   .header-programm::after {
     content: " оборудования";
+  }
+
+  .nav-container .item-1 .item-2 li {
+    min-width: 360px;
   }
 }
 @media screen and (max-width: 1150px) {
@@ -264,10 +270,14 @@ a {
   .header-phone-calls {
     display: block;
   }
+  .header-phone-calls img {
+    width: 50px;
+    height: 50px;
+  }
 
   .header-phones {
     justify-content: center;
-    min-width: 100px;
+    min-width: 130px;
   }
 
   .nav-container .item-1 .item-2 li {
@@ -316,10 +326,6 @@ a {
   .header-nav {
     font-size: 14px;
   }
-
-  .header-programm {
-    font-size: 14px;
-  }
 }
 @media screen and (max-width: 650px) {
   .header-top {
@@ -346,7 +352,7 @@ a {
     height: 30px;
   }
   .nav-container .item-1 .item-2 li {
-    min-width: 170px;
+    min-width: 190px;
     padding: 0 10px;
   }
 

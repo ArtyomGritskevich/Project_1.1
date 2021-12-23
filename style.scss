@@ -1,4 +1,4 @@
-@mixin font-title {
+.font-title {
     text-align: center;
     text-transform: uppercase;
 }
@@ -12,6 +12,10 @@ body {
 }
 a {
     text-decoration: none;
+}
+.font-title {
+    text-align: center;
+    text-transform: uppercase;
 }
 .header {
     position: fixed;
@@ -52,7 +56,7 @@ a {
     }
 }
 .header-programm {
-    @include font-title;
+    @extend .font-title;
     border: 1px #06266f solid;
     height: 40px;
     padding: 0 10px;
@@ -119,7 +123,7 @@ a {
     }
 }
 .carousel-title {
-    @include font-title;
+    @extend .font-title;
     color: white;
 }
 .carousel-height {
@@ -136,7 +140,7 @@ a {
     }
 }
 .carousel-button {
-    @include font-title;
+    @extend .font-title;
     color: white;
     width: 300px;
     height: 50px;
@@ -169,7 +173,7 @@ a {
     }
 }
 .new-main-title {
-    @include font-title;
+    @extend .font-title;
     display: block;
     text-align: center;
     margin: 40px 0;
@@ -223,9 +227,18 @@ a {
     line-height: 40px;
     color: white;
 }
-@media screen and (max-width: 1980px) and (min-width: 1150px) {
+@media screen and (max-width: 2000px) and (min-width: 1150px) {
     .header-programm::after {
         content: " оборудования";
+    }
+    .nav-container {
+        .item-1 {
+            .item-2 {
+                li {
+                    min-width: 360px;
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 1150px) {
@@ -239,10 +252,14 @@ a {
     }
     .header-phone-calls {
         display: block;
+        img {
+            width: 50px;
+            height: 50px;
+        }
     }
     .header-phones {
         justify-content: center;
-        min-width: 100px;
+        min-width: 130px;
     }
     .nav-container {
         .item-1 {
@@ -284,9 +301,7 @@ a {
     .header-nav {
         font-size: 14px;
     }
-    .header-programm {
-        font-size: 14px;
-    }
+    
 }
 @media screen and (max-width: 650px) {
     .header-top {
@@ -313,7 +328,7 @@ a {
             }
             .item-2 {
                 li {
-                    min-width: 170px;
+                    min-width: 190px;
                     padding: 0 10px;
                 }
             }
